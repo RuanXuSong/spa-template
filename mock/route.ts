@@ -20,6 +20,7 @@ export default {
         orderValue: 2,
         children: [],
         privilegeList: ['test', 'test2'],
+        isVisible: true,
       },
       {
         id: 2006,
@@ -40,6 +41,7 @@ export default {
             orderValue: 1,
             children: [],
             privilegeList: [],
+            isVisible: true,
           },
           {
             id: 2012,
@@ -51,9 +53,11 @@ export default {
             orderValue: 2,
             children: [],
             privilegeList: ['hahaha'],
+            isVisible: true,
           },
         ],
         privilegeList: [],
+        isVisible: true,
       },
     ],
     code: 20000,

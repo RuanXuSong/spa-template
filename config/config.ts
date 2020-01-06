@@ -8,7 +8,7 @@ export default {
     safari: 10,
     edge: 13,
     ios: 10,
-    ie: 10,
+    ie: 11,
   },
   outputPath: './build',
   plugins: [

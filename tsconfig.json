@@ -34,7 +34,12 @@
       "@/components": ["src/components"]
     }
   },
-  "include": ["./src/services/api.d.ts", "./src/**/*", "./typings.d.ts"],
+  "include": [
+    "./src/services/api.d.ts",
+    "./src/**/*",
+    "./typings.d.ts",
+    "config/defaultSettings.ts"
+  ],
   "exclude": [
     "node_modules",
     "**/*.(spec|test).ts?(x)",

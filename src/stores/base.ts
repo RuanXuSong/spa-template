@@ -7,7 +7,7 @@
  * @LastEditTime: 2019-10-27 19:29:56
  */
 import { BaseStore } from '@/interfaces/base.store';
-import { MenuItemConfig } from '@/interfaces/common';
+import { MenuDataItem } from '@ant-design/pro-layout';
 
 const baseStore: BaseStore = {
   menus: [
@@ -21,7 +21,7 @@ const baseStore: BaseStore = {
   privileges: [],
 
   // methods
-  setMenus(menus: MenuItemConfig[]) {
+  setMenus(menus: MenuDataItem[]) {
     this.menus = menus;
   },
   setPrivileges(privileges: string[]) {

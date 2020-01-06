@@ -1,3 +1,5 @@
+import { MenuDataItem } from '@ant-design/pro-layout';
+
 /*
  * @文件描述:
  * @公司: thundersdata
@@ -8,7 +10,7 @@
  */
 
 export interface CustomWindow extends Window {
-  gMenus: MenuItemConfig[];
+  gMenus: MenuDataItem[];
   requestConfig: {
     withCredentials: boolean;
     getToken: () => Promise<string>;
@@ -34,19 +36,6 @@ export interface PageMatchModel {
   params: object;
   path: string;
   url: string;
-}
-
-export interface PageBasicPropsModel {
-  history: History;
-  location: CustomLocation;
-  match: PageMatchModel;
-}
-
-export interface MenuItemConfig {
-  name: string;
-  link?: string;
-  icon?: string;
-  children?: MenuItemConfig[];
 }
 
 export interface PrivilegeResource {

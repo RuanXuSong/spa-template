@@ -9,7 +9,8 @@
 import utils from '@td-design/utils';
 import request from '@td-design/utils/lib/request';
 import { isEmpty } from 'lodash';
-import { PrivilegeResource, MenuItemConfig, CustomWindow } from './interfaces/common';
+import { PrivilegeResource, CustomWindow } from './interfaces/common';
+import { MenuDataItem } from '@ant-design/pro-layout';
 
 interface Route {
   path: string;
@@ -95,18 +96,18 @@ export async function render(oldRender: Function) {
  * 将后台返回的权限资源，转换成应用的菜单
  * @param resources
  */
-function convertResourceToMenu(list: PrivilegeResource[]): MenuItemConfig[] {
+function convertResourceToMenu(list: PrivilegeResource[]): MenuDataItem[] {
   return list.map(item => {
     if (!isEmpty(item.children)) {
       return {
-        link: item.apiUrl,
+        path: item.apiUrl,
         name: item.description,
         icon: item.icon,
         children: convertResourceToMenu(item.children!.filter(route => route.isVisible)),
       };
     }
     return {
-      link: item.apiUrl,
+      path: item.apiUrl,
       name: item.description,
       icon: item.icon,
     };

@@ -1,3 +1,5 @@
+import { MenuDataItem } from '@ant-design/pro-layout';
+
 /*
  * @文件描述:
  * @公司: thundersdata
@@ -6,12 +8,11 @@
  * @LastEditors: 陈杰
  * @LastEditTime: 2019-10-27 17:43:40
  */
-import { MenuItemConfig } from './common';
 
 export interface BaseStore {
-  menus: MenuItemConfig[];
+  menus: MenuDataItem[];
   privileges: string[];
 
-  setMenus: (menus: MenuItemConfig[]) => void;
+  setMenus: (menus: MenuDataItem[]) => void;
   setPrivileges: (privileges: string[]) => void;
 }

@@ -3,6 +3,11 @@ import routeConfig from './route.config';
 export default {
   routes: routeConfig,
   targets: {
+    chrome: 49,
+    firefox: 45,
+    safari: 10,
+    edge: 13,
+    ios: 10,
     ie: 11,
   },
   // devtool: 'cheap-module-source-map',
@@ -30,7 +35,6 @@ export default {
   autoprefixer: {
     browsers: ['> 1%', 'last 2 versions', 'not ie <= 10'],
   },
-  // theme: themeTemplate,
   treeShaking: true,
   disableCSSSourceMap: true,
   ignoreMomentLocale: true,
