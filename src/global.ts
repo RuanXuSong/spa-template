@@ -8,12 +8,9 @@
  */
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import * as Sentry from '@sentry/browser';
-import sentryConfig from '../sentry.config';
 import { CustomWindow } from './interfaces/common';
 import lscache from 'lscache';
 import 'normalize.css';
-// import '@/services';
 
 ((window as unknown) as CustomWindow).requestConfig = {
   withCredentials: false,
@@ -30,8 +27,3 @@ import 'normalize.css';
   password_max: 20,
   company: 0,
 };
-
-Sentry.init({
-  dsn: sentryConfig.dsn,
-  release: sentryConfig.config.release,
-});

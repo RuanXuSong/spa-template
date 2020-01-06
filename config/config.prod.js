@@ -1,7 +1,4 @@
 import routeConfig from './route.config';
-import themeTemplate from './theme-template';
-import SentryPlugin from 'webpack-sentry-plugin';
-import sentryConfig from '../sentry.config.js';
 
 export default {
   routes: routeConfig,
@@ -10,7 +7,6 @@ export default {
   },
   // devtool: 'cheap-module-source-map',
   devtool: 'source-map',
-  history: 'hash',
   outputPath: './build',
   plugins: [
     'umi-plugin-polyfill',
@@ -30,12 +26,11 @@ export default {
       },
     ],
   ],
+  minimizer: 'terserjs',
   autoprefixer: {
     browsers: ['> 1%', 'last 2 versions', 'not ie <= 10'],
   },
-  exportStatic: false, // 如果有动态路由，这个地方改成false
-  // 配置模版主题样式 最终应用的是theme-config.js的配置
-  theme: themeTemplate,
+  // theme: themeTemplate,
   treeShaking: true,
   disableCSSSourceMap: true,
   ignoreMomentLocale: true,
@@ -79,16 +74,5 @@ export default {
         },
       },
     });
-    config
-      .plugin('webpack-sentry-plugin')
-      .use(
-        new SentryPlugin({
-          ...sentryConfig.config,
-          deleteAfterCompile: true,
-          suppressConflictError: true,
-          include: /(\.js\.map|\.js)$/,
-        }),
-      )
-      .end();
   },
 };
